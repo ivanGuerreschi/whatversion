@@ -1,7 +1,7 @@
 // Copyright (c) Ivan Guerreschi. All rights reserved.
 // Licensed under the MIT License. See License.txt in the project root for license information.
 
-use what_version::{csv, fetch, local_version};
+use whatversion::{csv, fetch, local_version};
 
 #[tokio::main]
 async fn main() -> octocrab::Result<()> {
