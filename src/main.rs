@@ -1,4 +1,4 @@
-// Copyright (c) Ivan Guerreschi. All rights reserved.
+// Copyright (c) 2023 Ivan Guerreschi. All rights reserved.
 // Licensed under the MIT License. See License.txt in the project root for license information.
 
 use whatversion::{csv, fetch, local_version};
@@ -6,6 +6,20 @@ use whatversion::{csv, fetch, local_version};
 #[tokio::main]
 async fn main() -> octocrab::Result<()> {
     const FILE: &str = "/.apps.csv";
+
+    let apps = csv::read_lines().await;
+    match apps = {
+        Ok(apps_line) => {
+            for app in apps_line.skip(1) {
+                let apps_name = app;
+                match apps_name {
+                    Ok() => {},
+                    Err(error) => panic!(),
+                }
+            }
+        },
+        Err(error) => panic!("Error fetch data from GitHub: {:?}", error),
+    }
 
     if let Ok(apps) = csv::read_lines(FILE).await {
         for app in apps.skip(1) {
